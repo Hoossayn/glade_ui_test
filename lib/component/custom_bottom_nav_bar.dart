@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../size_config.dart';
+import 'package:flutter_svg/svg.dart';
+
 
 class CustomBottonNavBar extends StatelessWidget {
   const CustomBottonNavBar({
@@ -10,7 +12,6 @@ class CustomBottonNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
-      height: 80,
       color: Colors.white,
       child: SafeArea(
         child: Padding(
@@ -20,7 +21,7 @@ class CustomBottonNavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               NavItem(
-                icon: "assets/Group 4662.png",
+                icon: "assets/banks.svg",
                 title: "Home",
                 press: () {
                   Navigator.push(
@@ -31,25 +32,25 @@ class CustomBottonNavBar extends StatelessWidget {
                 },
               ),
               NavItem(
-                icon: "assets/Group 4662.png",
+                icon: "assets/paper-plane.svg",
                 title: "Funds Transfer",
                 isActive: true,
                 press: () {},
               ),
               NavItem(
-                icon: "assets/Group 4662.png",
+                icon: "assets/money-bag.svg",
                 title: "Loan",
                 press: () {},
               ),
 
               NavItem(
-                icon: "assets/Group 4662.png",
+                icon: "assets/invoice.svg",
                 title: "Invoice",
                 press: () {},
               ),
 
               NavItem(
-                icon: "assets/Group 4662.png",
+                icon: "assets/credit-card.svg",
                 title: "Cards",
                 press: () {},
               ),
@@ -90,7 +91,7 @@ class NavItem extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Image.asset(icon, height: 28),
+              SvgPicture.asset(icon, height: 28),
 
               Spacer(),
               Text(

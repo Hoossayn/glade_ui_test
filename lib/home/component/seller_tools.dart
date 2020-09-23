@@ -5,10 +5,9 @@ import 'package:glade_ui_test/fundsTransfer/funds_transfer.dart';
 class SellerTools extends StatefulWidget {
   @override
   SellerToolsState createState() => SellerToolsState();
-
 }
 
-class SellerToolsState extends State<SellerTools>  {
+class SellerToolsState extends State<SellerTools> {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -23,22 +22,21 @@ class SellerToolsState extends State<SellerTools>  {
     );
   }
 
-  Widget _fundsTransfer(BuildContext context){
+  Widget _fundsTransfer(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => FundsTransfer()));
       },
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         child: Container(
           height: MediaQuery.of(context).size.height / 10,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.0),
-            color: Colors.black26
-          ),
+              borderRadius: BorderRadius.circular(10.0),
+              color: Color(0xFFF5F8FF)),
           child: Padding(
-            padding: const EdgeInsets.only(left:18.0, right: 10),
+            padding: const EdgeInsets.only(left: 18.0, right: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -47,22 +45,25 @@ class SellerToolsState extends State<SellerTools>  {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Funds Transfer',
+                    Text(
+                      'Funds Transfer',
                       style: TextStyle(
                         fontFamily: 'Varela',
-                        fontSize: 28.0,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold
                       ),
                     ),
-                    Text('Sell Items and Tickets with Ease and',
+                    Text(
+                      'Sell Items and Tickets with Ease and',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 15.0,
+                        color: Colors.grey
                       ),
                     ),
                   ],
                 ),
                 Icon(Icons.arrow_forward_ios),
-
               ],
             ),
           ),
@@ -70,17 +71,17 @@ class SellerToolsState extends State<SellerTools>  {
       ),
     );
   }
-  Widget _customer(){
+
+  Widget _customer() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       child: Container(
         height: MediaQuery.of(context).size.height / 10,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
-          color: Colors.black26
-        ),
+            borderRadius: BorderRadius.circular(10.0),
+            color: Color(0xFFF5F8FF)),
         child: Padding(
-          padding: const EdgeInsets.only(left:18.0, right: 10),
+          padding: const EdgeInsets.only(left: 18.0, right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -90,40 +91,43 @@ class SellerToolsState extends State<SellerTools>  {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Customers',
+                    Text(
+                      'Customers',
                       style: TextStyle(
                         fontFamily: 'Varela',
-                        fontSize: 28.0,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold
                       ),
                     ),
-                    Text('See your Customers Details Customers',
+                    Text(
+                      'See your Customers Details Customers',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 15.0,
+                        color: Colors.grey
                       ),
                     ),
                   ],
                 ),
               ),
               Icon(Icons.arrow_forward_ios),
-
             ],
           ),
         ),
       ),
     );
   }
-  Widget _invoices(){
+
+  Widget _invoices() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       child: Container(
         height: MediaQuery.of(context).size.height / 10,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
-          color: Colors.black26
-        ),
+            borderRadius: BorderRadius.circular(10.0),
+            color: Color(0xFFF5F8FF)),
         child: Padding(
-          padding: const EdgeInsets.only(left:18.0, right: 10),
+          padding: const EdgeInsets.only(left: 18.0, right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -132,39 +136,42 @@ class SellerToolsState extends State<SellerTools>  {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Invoices',
+                  Text(
+                    'Invoices',
                     style: TextStyle(
                       fontFamily: 'Varela',
-                      fontSize: 28.0,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold
                     ),
                   ),
-                  Text('Send Invoice to Customers and get Paid',
+                  Text(
+                    'Send Invoice to Customers and get Paid',
                     style: TextStyle(
                       fontFamily: 'Varela',
                       fontSize: 15.0,
+                      color: Colors.grey
                     ),
                   ),
                 ],
               ),
               Icon(Icons.arrow_forward_ios),
-
             ],
           ),
         ),
       ),
     );
   }
-  Widget _Pos(){
+
+  Widget _Pos() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       child: Container(
         height: MediaQuery.of(context).size.height / 10,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
-          color: Colors.black26
-        ),
+            borderRadius: BorderRadius.circular(10.0),
+            color: Color(0xFFF5F8FF)),
         child: Padding(
-          padding: const EdgeInsets.only(left:18.0, right: 10),
+          padding: const EdgeInsets.only(left: 18.0, right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -173,27 +180,29 @@ class SellerToolsState extends State<SellerTools>  {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('POS',
+                  Text(
+                    'POS',
                     style: TextStyle(
                       fontFamily: 'Varela',
-                      fontSize: 28.0,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold
                     ),
                   ),
-                  Text('Access Point of sale with Ease, Access',
+                  Text(
+                    'Access Point of sale with Ease, Access',
                     style: TextStyle(
                       fontFamily: 'Varela',
                       fontSize: 15.0,
+                      color: Colors.grey
                     ),
                   ),
                 ],
               ),
               Icon(Icons.arrow_forward_ios),
-
             ],
           ),
         ),
       ),
     );
   }
-
 }

@@ -10,14 +10,19 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     // You have to call SizeConfig on your starting page
     SizeConfig().init(context);
-    return ListView(
+    return Column(
       children: [
-        HomeHeader(),
-        SizedBox(height: 70),
-        CategoryTabBar(),
+        Container(
+            child: HomeHeader()
+        ),
 
-
-
+        Container(
+            child: Column(
+              children: [
+                SizedBox(height: 70),
+                CategoryTabBar(),
+              ],
+            ))
         //VerticalSpacing(),
         //TopTravelers(),
        // VerticalSpacing(),

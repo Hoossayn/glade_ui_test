@@ -69,9 +69,9 @@ class CategoryTabBarState extends State<CategoryTabBar> with SingleTickerProvide
           ),
         ),
       ),
-      SizedBox(height: 20),
+      //SizedBox(height: 20),
       Container(
-        height: MediaQuery.of(context).size.height,
+        height: 440.0,
         width: double.infinity,
         child: TabBarView(
           controller: _tabController,

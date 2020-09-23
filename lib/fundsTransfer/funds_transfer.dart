@@ -1,14 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glade_ui_test/fundsTransfer/other_banks.dart';
+import 'package:flutter_svg/svg.dart';
 
-class FundsTransfer extends StatelessWidget {
+
+class FundsTransfer extends StatefulWidget {
+  @override
+  _FundsTransferState createState() => _FundsTransferState();
+}
+
+class _FundsTransferState extends State<FundsTransfer> with SingleTickerProviderStateMixin {
 
   TextStyle style = TextStyle(
     color: Colors.black,
     fontFamily: 'Varela',
     fontSize: 20,
   );
+
+  TabController _tabController;
+  @override
+  void initState(){
+    _tabController = TabController(length: 3, vsync: this);
+    super.initState();
+  }
 
 
   @override
@@ -30,91 +44,47 @@ class FundsTransfer extends StatelessWidget {
         children: <Widget>[
           Divider(height: 2,color: Colors.grey,),
           SizedBox(height: 30),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    height: 50,
-                    width: 350,
-                    decoration: BoxDecoration(
-                      color: Colors.lightBlue,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          bottomLeft: Radius.circular(10)),
-
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left:8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text('Personal Info',
-                            style: TextStyle(
-                                fontFamily: 'Varela',
-                                fontSize: 15.0,
-                                color: Colors.white
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                  ),
-                  Positioned(
-                    left: 195,
-                    child: Container(
-                      height: 50,
-                      width: 160,
-                      decoration: BoxDecoration(
-                        color: Colors.lightGreen,
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(10),
-                            bottomRight: Radius.circular(10)),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Security',
-                            style: TextStyle(
-                                fontFamily: 'Varela',
-                                fontSize: 15.0,
-                                color: Colors.blue
-                            ),
-                          ),
-                        ],
+          Padding(
+            padding: new EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+            child: Container(
+              height: 30,
+              child: TabBar(
+                controller: _tabController,
+                indicatorColor: Colors.transparent,
+                labelColor: Colors.white,
+                indicator: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.orange
+                ),
+                isScrollable: true,
+                labelPadding: EdgeInsets.only(left:15.0, right: 15.0),
+                unselectedLabelColor: Colors.black45,
+                tabs: <Widget>[
+                  Tab(
+                    child: Text('Personal Info',
+                      style: TextStyle(
+                        fontFamily: 'Varela',
+                        fontSize: 15.0,
                       ),
                     ),
                   ),
-                  Positioned(
-                    left: 110,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.all(Radius.circular(10))
-                        ,
-                      ),
-                      height: 50,
-                      width: 120,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Business Info',
-                            style: TextStyle(
-                                fontFamily: 'Varela',
-                                fontSize: 15.0,
-                                color: Colors.white
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  Tab(
+                    child: Text('Business Info',
+                        style: TextStyle(
+                          fontFamily: 'Varela',
+                          fontSize: 15.0,
+                        )),
                   ),
-
+                  Tab(
+                    child: Text('Security',
+                        style: TextStyle(
+                          fontFamily: 'Varela',
+                          fontSize: 15.0,
+                        )),
+                  ),
                 ],
               ),
-            ],
+            ),
           ),
           SizedBox(height: 30),
           Padding(
@@ -123,10 +93,10 @@ class FundsTransfer extends StatelessWidget {
               children: [
                 Text('Transfer Mode',
                   style: TextStyle(
-                    fontFamily: 'Varela',
-                    fontSize: 18.0,
-                    color: Colors.black54,
-                    fontWeight: FontWeight.bold
+                      fontFamily: 'Varela',
+                      fontSize: 18.0,
+                      color: Colors.black54,
+                      fontWeight: FontWeight.bold
                   ),
                 ),
               ],
@@ -157,10 +127,10 @@ class FundsTransfer extends StatelessWidget {
                 Center(
                   child: Text('SELECT BENEFICIARY',
                     style: TextStyle(
-                      color: Colors.lightBlue,
+                        color: Colors.lightBlue,
                         fontFamily: 'Varela',
                         fontSize: 15.0,
-                        fontWeight: FontWeight.normal
+                        fontWeight: FontWeight.bold
                     ),
                   ),
                 ),
@@ -276,6 +246,9 @@ class FundsTransfer extends StatelessWidget {
               // controller: _email,
               cursorColor: Colors.black,
               decoration: new InputDecoration(
+                fillColor: Color(0xFFF5F8FF),
+                filled: true,
+                hintText: 'Account Number',
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(15.0)),
                   borderSide: BorderSide(width: 1, color: Colors.grey),
@@ -325,6 +298,9 @@ class FundsTransfer extends StatelessWidget {
               // controller: _email,
               cursorColor: Colors.black,
               decoration: new InputDecoration(
+                fillColor: Color(0xFFF5F8FF),
+                filled: true,
+                hintText: 'Account Name',
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(15.0)),
                   borderSide: BorderSide(width: 1, color: Colors.grey),
@@ -374,6 +350,9 @@ class FundsTransfer extends StatelessWidget {
               // controller: _email,
               cursorColor: Colors.black,
               decoration: new InputDecoration(
+                fillColor: Color(0xFFF5F8FF),
+                filled: true,
+                hintText: 'Amount',
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(15.0)),
                   borderSide: BorderSide(width: 1, color: Colors.grey),
@@ -423,6 +402,9 @@ class FundsTransfer extends StatelessWidget {
               // controller: _email,
               cursorColor: Colors.black,
               decoration: new InputDecoration(
+                fillColor: Color(0xFFF5F8FF),
+                filled: true,
+                hintText: 'Narration',
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(15.0)),
                   borderSide: BorderSide(width: 1, color: Colors.grey),
@@ -454,7 +436,7 @@ class FundsTransfer extends StatelessWidget {
         width: 170,
         height: 110,
         decoration: BoxDecoration(
-            color: Colors.black26,
+            color: Color(0xFFF5F8FF),
             borderRadius: BorderRadius.circular(10)
         ),
         child: Column(
@@ -468,7 +450,7 @@ class FundsTransfer extends StatelessWidget {
                 ],
               ),
             ),
-            Icon(Icons.home),
+            SvgPicture.asset("assets/banks.svg", height: 30),
             SizedBox(height: 20,),
             Text('Glade Account',
               style: TextStyle(
@@ -494,7 +476,7 @@ class FundsTransfer extends StatelessWidget {
         width: 170,
         height: 110,
         decoration: BoxDecoration(
-            color: Colors.black26,
+            color: Color(0xFFF5F8FF),
             borderRadius: BorderRadius.circular(10)
         ),
         child: Column(
@@ -508,7 +490,7 @@ class FundsTransfer extends StatelessWidget {
                 ],
               ),
             ),
-            Icon(Icons.home),
+            SvgPicture.asset("assets/banks.svg", height: 30),
             SizedBox(height: 20,),
             Text('Other Banks',
               style: TextStyle(
@@ -524,3 +506,6 @@ class FundsTransfer extends StatelessWidget {
     );
   }
 }
+
+
+
